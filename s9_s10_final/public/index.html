@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Запис на зустрічі клубу програмування">
+  <title>Зустрічі клубу</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Перейти до вмісту</a>
+  <header class="site-header">
+    <p class="logo">Зустрічі клубу</p>
+    <nav aria-label="Основна навігація">
+      <a href="#/list">Розклад</a>
+      <a href="#/register">Запис</a>
+      <a href="#/my">Мої зустрічі</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section data-screen="list" aria-labelledby="h-list">
+      <h1 id="h-list" tabindex="-1">Розклад зустрічей</h1>
+      <div class="layout">
+        <div>
+          <label for="day-filter">День тижня</label>
+          <select id="day-filter"><option value="">Усі дні</option></select>
+          <p id="status" role="status">Завантаження…</p>
+          <ul class="cards"></ul>
+        </div>
+        <aside class="panel" aria-labelledby="h-new">
+          <h2 id="h-new">Нова зустріч</h2>
+          <form id="meeting-form" novalidate>
+            <label for="day">День</label>
+            <input id="day" name="day" autocomplete="off" aria-describedby="day-error">
+            <p id="day-error" class="error"></p>
+            <label for="time">Час (ГГ:ХХ)</label>
+            <input id="time" name="time" placeholder="16:00" autocomplete="off" aria-describedby="time-error">
+            <p id="time-error" class="error"></p>
+            <label for="topic">Тема</label>
+            <input id="topic" name="topic" autocomplete="off" aria-describedby="topic-error">
+            <p id="topic-error" class="error"></p>
+            <label for="places">Кількість місць</label>
+            <input id="places" name="places" type="number" min="1" max="100" aria-describedby="places-error">
+            <p id="places-error" class="error"></p>
+            <button type="submit">Додати</button>
+          </form>
+          <p id="message" role="status"></p>
+        </aside>
+      </div>
+    </section>
+
+    <section data-screen="register" aria-labelledby="h-register" hidden>
+      <h1 id="h-register" tabindex="-1">Запис на зустріч</h1>
+      <form id="reg-form" class="panel" novalidate>
+        <label for="meeting">Зустріч</label>
+        <select id="meeting" name="meetingId"></select>
+        <label for="name">Ім’я</label>
+        <input id="name" name="name" autocomplete="name" aria-describedby="name-error">
+        <p id="name-error" class="error"></p>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" aria-describedby="email-error">
+        <p id="email-error" class="error"></p>
+        <button type="submit">Записатися</button>
+      </form>
+      <p id="reg-message" role="status"></p>
+    </section>
+
+    <section data-screen="my" aria-labelledby="h-my" hidden>
+      <h1 id="h-my" tabindex="-1">Мої зустрічі</h1>
+      <p id="my-empty">Записів поки немає.</p>
+      <ul id="my-list" class="cards"></ul>
+    </section>
+  </main>
+</body>
+</html>

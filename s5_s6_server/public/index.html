@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Зустрічі клубу</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Зустрічі клубу</h1>
+  </header>
+  <main>
+    <section id="events">
+      <h2>Розклад</h2>
+      <p id="status">Завантаження…</p>
+      <ul></ul>
+    </section>
+    <section id="join">
+      <h2>Запис на зустріч</h2>
+      <form id="join-form" novalidate>
+        <label for="reg-meeting">Зустріч</label>
+        <select id="reg-meeting" name="meetingId"></select>
+        <label for="reg-name">Ім’я</label>
+        <input id="reg-name" name="name">
+        <button type="submit">Записатися</button>
+      </form>
+      <p id="reg-message"></p>
+    </section>
+    <section id="admin">
+      <h2>Нова зустріч</h2>
+      <form id="meeting-form" novalidate>
+        <label for="day">День</label>
+        <input id="day" name="day">
+        <label for="time">Час</label>
+        <input id="time" name="time" placeholder="16:00">
+        <label for="topic">Тема</label>
+        <input id="topic" name="topic">
+        <label for="places">Кількість місць</label>
+        <input id="places" name="places" type="number">
+        <button type="submit">Додати</button>
+      </form>
+      <p id="message"></p>
+    </section>
+  </main>
+</body>
+</html>

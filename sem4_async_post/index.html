@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Клуб програмування КК-КН · форма запису</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Клуб програмування КК-КН</h1>
+    <p>Форма запису надсилає дані методом POST</p>
+  </header>
+  <nav>
+    <a href="#events">Зустрічі</a>
+    <a href="#join">Запис</a>
+    <a href="#my">Мої заявки</a>
+  </nav>
+  <main>
+    <section id="events">
+      <h2>Зустрічі</h2>
+      <p id="status">Завантаження…</p>
+      <ul></ul>
+    </section>
+    <section id="join">
+      <h2>Запис на зустріч</h2>
+      <form id="join-form" novalidate>
+        <label for="name">Ім’я</label>
+        <input id="name" name="name" autocomplete="name">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email">
+        <label for="meeting">Зустріч</label>
+        <select id="meeting" name="meeting"></select>
+        <button type="submit" id="send-btn">Надіслати</button>
+      </form>
+      <p id="message" role="status"></p>
+    </section>
+    <section id="my">
+      <h2>Мої заявки</h2>
+      <ul id="my-list"></ul>
+    </section>
+  </main>
+  <footer>
+    <p>Контакти: Telegram-канал клубу</p>
+  </footer>
+</body>
+</html>

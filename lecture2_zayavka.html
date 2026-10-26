@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Заявка на довідку</title>
+</head>
+<body>
+  <h1>Заявка на довідку</h1>
+  <form action="/zayavky" method="post">
+    <label for="name">ПІБ</label>
+    <input id="name" name="name" type="text" required>
+    <label for="group">Група</label>
+    <input id="group" name="group" type="text" required>
+    <label for="kind">Тип довідки</label>
+    <select id="kind" name="kind" required>
+      <option value="study">про навчання</option>
+      <option value="grades">про оцінки</option>
+    </select>
+    <button type="submit">Надіслати</button>
+  </form>
+  <!--
+  Поля, які має повторити сервер:
+  name  (text)   — не порожнє, 2–100 символів
+  group (text)   — не порожнє, відома група
+  kind  (select) — лише study або grades
+  Успішний POST /zayavky: тіло name=Олена&group=КД-61&kind=study → очікую 201/200
+  POST з порожнім ПІБ: name=&group=КД-61&kind=study → очікую 400
+  -->
+</body>
+</html>

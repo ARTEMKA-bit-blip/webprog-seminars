@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Клуб програмування КК-КН · дані з сервера</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Клуб програмування КК-КН</h1>
+    <p>Дані сторінки завантажуються через fetch</p>
+  </header>
+  <nav>
+    <a href="#about">Про нас</a>
+    <a href="#events">Зустрічі</a>
+    <a href="#hosts">Організатори</a>
+  </nav>
+  <main>
+    <section id="about">
+      <h2>Про нас</h2>
+      <p>Ми вчимо HTML, CSS і JavaScript та разом робимо невеликі проєкти.</p>
+    </section>
+    <section id="events">
+      <h2>Зустрічі</h2>
+      <p id="status">Завантаження…</p>
+      <label for="day-filter">День тижня</label>
+      <select id="day-filter"><option value="">Усі дні</option></select>
+      <ul></ul>
+    </section>
+    <section id="hosts">
+      <h2>Організатори</h2>
+      <p id="hosts-status">Завантаження…</p>
+      <ul></ul>
+    </section>
+  </main>
+  <footer>
+    <p>Контакти: Telegram-канал клубу</p>
+  </footer>
+</body>
+</html>
